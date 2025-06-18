@@ -1,18 +1,42 @@
 # GoogleDriveAPIUploader
 
-# Programa basico utilizando api do Drive para enviar imagens ao seu Google Drive por meio de autenticação OAuth2.0 
+📌 Um programa básico para upload de imagens no Google Drive utilizando a API Drive com autenticação OAuth 2.0
 
-################################# ATENÇÃO LEIA ANTES DE USAR #####################################################
-Para voce usar de melhor maneira, voce deve primeiro hablitar o serviço de autenticação do google em sua conta. 
-Passo 1 - Acesse: https://console.cloud.google.com/ 
-    1.1 - Crie um novo projeto de sua preferencia.
-    1.2 - No menu latera esquerdo superior, selecione "APIs e serviços" em seguida "Biblioteca". 
-    1.3 - Pesquise "Google Drive API" e instale.
-    1.4 - Vá de novo no menu lateral esquerdo superior, selecione agora "APIs e serviços" em seguida "Tela de permissão OAuth".
-    1.5 - No menu esquerdo que se abrir, clique em "Clientes" e adicione um cliente selecionando o tipo de aplicativo desenvolvido (no caso "App para computador").
-    1.6 - Baixe o JSON que o Google fornecer, modifique o nome dele para "client_secret.json" e coloque no local do seu programa.       
-Passo 2 - Crie uma pasta no seu Google Drive e deixa ela aberta para publico. 
-Passo 3 - Vá para a pasta raiz do seu programa, e edite "appSettings.json": dentro dele, mude a linha "ParentFolderId": "*COLOQUE O ID DA PASTA AQUI*".
-#################################################################################################################
+## 📋 Pré-requisitos
+- [Google Cloud Console](https://console.cloud.google.com/) ativo
+- Conta no Google Drive
+- .NET 6.0 ou superior instalado
 
-Feito isso, você já deve estar configurado o seu programa. 
+## ⚙️ Configuração Inicial
+
+### 1. Configuração na Google Cloud Console
+1. Acesse o [Google Cloud Console](https://console.cloud.google.com/)
+2. Crie um novo projeto
+3. No menu lateral esquerdo:
+   - Selecione **"APIs e Serviços" > "Biblioteca"**
+   - Pesquise por **"Google Drive API"** e habilite
+4. Configure as credenciais:
+   - Vá para **"APIs e Serviços" > "Tela de permissão OAuth"**
+     - Preencha as informações necessárias (nome do app, email de suporte, etc.)
+   - Em **"Credenciais" > "Criar Credenciais"**, selecione:
+     - Tipo: **Aplicativo para computador**
+     - Nome: `GoogleDriveAPIUploader`
+5. Baixe o arquivo JSON de credenciais e renomeie para `client_secret.json`
+
+### 2. Configuração no Google Drive
+1. Crie uma pasta no seu Drive
+2. Compartilhe com acesso público (opcional):
+   - Clique com o botão direito na pasta > "Compartilhar"
+   - Selecione "Qualquer pessoa com o link"
+
+### 3. Configuração do App
+1. Obtenha o ID da pasta do Drive:
+   - Abra a pasta no navegador
+   - O ID aparece na URL: `https://drive.google.com/drive/folders/[AQUI_VAI_O_ID]`
+2. Edite o arquivo `appsettings.json`:
+   ```json
+   {
+     "DriveSettings": {
+       "ParentFolderId": "COLE_AQUI_O_ID_DA_PASTA"
+     }
+   }
