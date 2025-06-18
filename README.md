@@ -1,9 +1,9 @@
 # GoogleDriveAPIUploader
 
-Programa basico utilizando api do Drive para enviar imagens ao seu Google Drive por meio de autenticação OAuth2.0
+Programa basico utilizando api do Drive para enviar imagens ao seu Google Drive por meio de autenticação OAuth2.0 \n
 
 ################################# ATENÇÃO LEIA ANTES DE USAR #####################################################
-Para voce usar de melhor maneira, voce deve primeiro hablitar o serviço de autenticação do google em sua conta. 
+Para voce usar de melhor maneira, voce deve primeiro hablitar o serviço de autenticação do google em sua conta. \n
 Passo 1 - Acesse: https://console.cloud.google.com/ 
     1.1 - Crie um novo projeto de sua preferencia.
     1.2 - No menu latera esquerdo superior, selecione "APIs e serviços" em seguida "Biblioteca". 
